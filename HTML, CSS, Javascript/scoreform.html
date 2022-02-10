@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+	<script>
+		while(true) {
+			var kor = parseInt(prompt("국어점수 입력"));
+			
+			if(kor >= 0 && kor <= 100) break;
+		}
+		while(true) {
+			var mat = parseInt(prompt("수학점수 입력"));
+			
+			if(mat >= 0 && mat <= 100) break;
+		}
+		while(true) {
+			var eng = parseInt(prompt("영어점수 입력"));
+			
+			if(eng >= 0 && eng <= 100) break;
+		}
+		var open = confirm("위의 점수를 공개하시겠습니까?");
+		
+		// 가산점
+		if(open == true) {
+			if(kor * 1.1 > 100) kor = 100;
+			else kor = kor * 1.1;
+			if(mat * 1.1 > 100) mat = 100;
+			else mat = mat * 1.1;
+			if(eng * 1.1 > 100) eng = 100;
+			else eng = eng * 1.1;
+		}
+		
+		var sum = kor + mat + eng;
+		var avg = parseInt(sum / 3);
+		var grade;
+		if(avg >= 80) grade = "우수";
+		else if(avg >= 60) grade = "보통";
+		else if(avg >= 40) grade = "노력";
+		else grade = "분발";
+		
+		var tabletag = 
+		`<table style="2px solid black">
+		<tr><td>국어</td><td>${kor}</td></tr>
+		<tr><td>수학</td><td>${mat}</td></tr>
+		<tr><td>영어</td><td>${eng}</td></tr>
+		<tr><td>공개여부</td><td>${open}</td></tr>
+		<tr><td>총점</td><td>${sum}</td></tr>
+		<tr><td>평균</td><td>${avg}</td></tr>
+		<tr><td>등급</td><td>${grade}</td></tr>
+		</table>`;
+		
+		document.write(tabletag);
+	</script>
+
+</body>
+</html>

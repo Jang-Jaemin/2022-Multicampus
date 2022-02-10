@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+	<script>
+		var br = "<br>";
+		
+		var scope = "전역변수";
+		function f1() {
+			var scope = "f1 지역변수";
+			document.write("f1함수 내부 > " + scope + " : " + this.scope + br);
+		}
+		
+		f1();
+		document.write("f1함수 외부 > " + scope + br);
+		
+		// let, const
+		{
+			var a = 10;		// 블럭내, 외부, 중복 선언 가능
+			const b = 20;		// 블럭내부, 중복 선언 불가
+			let c = 30;		// 블럭내부, 중복 선언 불가
+			
+			document.write("{}블록내부 > " + a + br);
+			document.write("{}블록내부 > " + b + br);
+			document.write("{}블록내부 > " + c + br);
+		}
+		document.write("{}블록내부 > " + a + br);
+		document.write("{}블록내부 > " + b + br);
+		document.write("{}블록내부 > " + c + br);
+	</script>
+	
+</body>
+</html>

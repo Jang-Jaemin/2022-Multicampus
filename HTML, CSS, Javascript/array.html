@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+	<script>
+		// 값이 없는 배열(자바 ArrayList)
+		// 자바 배열 - 동일 타입 값 저장 / 정적크기
+		// 자바 ArrayList - 동일 타입 + 다양한 값 저장 / 동적크기
+		
+		// 자바스크립트 배열 = 자바 ArrayList
+		var a = [];
+		document.write("<h3 style='color:red'>" + (a instanceof Array) + "</h3>");
+		document.write("<h3 style='color:red'>" + a.length + "</h3>");
+		
+		a[0] = 100;		// a 배열 추가, 인덱스 값 있으면 수정 / 인덱스가 존재하지 않으면 추가
+		a[10] = 200;
+		document.write("<h3 style='color:blue'>" + a.length + "</h3>");
+				
+		// 배열 가장 끝에 추가
+		a.push(300);
+		a.push(400);
+		a.push(500);
+		
+		// 배열 가장 끝 데이터 삭제
+		a.pop();
+		a.pop();
+		a.pop();
+		a.pop();
+		a.pop();
+		a.pop();
+		a.pop();
+		a.pop();
+		a.pop();
+		
+		// 배열 가장 앞에 추가
+		a.unshift(200);
+		a.unshift(300);
+		a.unshift(400);
+		
+		// 배열 가장 앞 삭제
+		a.shift();
+		a.shift();
+		a.shift();
+		
+		for(var i = 0; i < a.length; i++) {
+			document.write(a[i] + ", ");
+		}
+		
+		document.write("<br>");
+		
+		for(i in a) {
+			document.write(a[i] + ", ");
+		}
+		
+		document.write("<br>");
+		
+		var b = [1, 'a', false, 1.1, [1, 2, 3], {id:100, name:"이자바", toString:function() {return this.id + " : " + this.name}}];
+		for(var i = 0; i < b.length; i++) {
+			document.write(b[i] + ", ");
+		}
+		
+		document.write("<br>");
+		
+		// Array 내장객체 생성자 호출
+		var c = new Array(10, 20, 30, 40);
+		c[0] = 1;
+		c.push(2);
+		c.unshift(3);
+		
+		// 배열 반복문 없이 조회
+		document.write(c.join("-") + "<br>");
+		document.write(c + "<br>");
+	</script>
+
+</body>
+</html>

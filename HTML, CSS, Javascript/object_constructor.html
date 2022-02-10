@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+	<script>
+		// 객체생성 - 1. 리터럴 방법 var obj = {.....}
+		//			  2. 생성자 정의(자바 클래스 정의와 유사) > 호출
+		function Employee(id, name, salary) {
+			this.id = id;
+			this.name = name;
+			this.salary = salary;
+			this.print = function() {
+				document.write("<h3>" + this.id + " : " + this.name + " : " + this.salary + "</h3>");
+			}
+		}
+		
+		var e1 = new Employee(100, "최과장", 90000);
+		var e2 = new Employee(200, "김부장", 100000);
+		
+		e1.print();
+		e2.print();
+		
+		// e1 bonus 변수, title
+		e1.bonus = 1000
+		e1['title'] = '과장';
+		
+		// 객체 모든 변수 출력
+		for(v in e1) {
+			document.write("<h3> style='color:blue'>" + e1[v] + "</h3>");
+		}
+		
+		// e2 salary 삭제
+		delete e2.salary;
+		e2.print();
+	</script>
+	
+</body>
+</html>

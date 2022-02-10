@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+	<script>
+		(function(i, j) {
+			document.write("이름없는 함수 실행중<br>");
+			return i * j;
+		})(10, 20);
+		
+		var f = function(a = 5) {
+			if(arguments.length > 1) {
+				documnet.write("1개 전달<br>");	// 현재함수 호출하는 곳에서 전달한 매개변수들 배열 관리변수				
+			}
+			if(typeof(a) == 'number') {
+				return a * a;				
+			} else {
+				return "연산불가";
+			}
+		}
+		
+		/* document.write(f(10) + "<br>");
+		document.write(f() + "<br>");
+		document.write(f(1, 2, 3) + "<br>"); */
+		document.write(f("일") + "<br>");
+		
+		function f1(a) {
+			a();
+		}
+		
+		function f2() {
+			alert("f2 호출 실행중");
+		}
+		
+		f1(f2);
+		
+		// 화살표 함수
+		var func = (x) => {return x * x;};
+		document.write(fucn(10) + "<br>");
+	</script>
+	
+</body>
+</html>

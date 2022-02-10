@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+	<script>
+		var br = "<br>";
+
+		function f1() {
+			document.write("f1 실행" + br);
+		}
+
+		function f2() {
+			document.write("f2 실행" + br);
+			return 10 * 10;
+		}
+
+		function f3(a) {
+			document.write("f3 실행" + br);
+			return a * a;
+		}
+
+		document.write(f1() + br);		// 매개변수 없고 리턴값 없음
+		var ret2 = f2();		// 매개변수 없고 리턴값 있음
+		document.write("f2 실행 리턴값 : " + ret2 + br);
+		
+		document.write("f3 실행 리턴값 : " + f3(10) + br);
+		document.write("f3 실행 리턴값 : " + f3(true) + br);
+		document.write("f3 실행 리턴값 : " + f3("js") + br);
+		document.write("f3 실행 리턴값 : " + f3(5, 10) + br);
+		document.write("f3 실행 리턴값 : " + f3() + br);
+		
+		f4();		// 정의 이전에 호
+		
+		function f4() {
+			document.write("f4 실행" + br);
+		}
+		
+		// 자바스크립트 함수도 변수의 일종
+		var v_f = function() {
+			document.write("함수 실행" + br);
+		}
+		
+		document.write(v_f() + br);
+		document.write(v_f + br);
+		
+		function exam3(p) {
+			p.name="변경됨";
+		}
+		var emp1 = {
+				id:100,
+				name:"이사원",
+				salary:45600.00
+		};
+		exam3(emp1);
+		document.write("exam3 함수 외부=>"+ emp1.name +br);
+		
+		// 객체가 아닌 변수 test_p 변수값을 p변수로 전달(=복사) 하면,
+		// 전달 이후 p 변수값 변경되면 test_p 변경되지 않는다.
+		function exm2(p) {
+			p = 100;
+			document.write("exam2 함수내부 > " + p + br);
+		}
+		var test_p = 200;
+		exm2(test_p);
+		document.write("exam2 함수 외부 > " + test_p + br);
+		
+		var obj_params = {x:50, y:100, radius:200, color:"red", line:true, width:2};
+		circle(obj_params);
+		
+		function circle(p) {
+			var output = `원 중심 x좌표 : ${p.x}, y좌표 : ${p.y}에서
+			반지름이 ${p.radius}인 원을 그린다.
+			원의 바탕색은 ${p.color}이며,
+			선은 ${p.line} 값에 따라 그릴 것이며,
+			굵기는 ${p.width} 로 그린다.`;
+			document.write(output + br);
+		}
+		
+	</script>
+
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+	<script>
+		var br = "<br>";
+		
+		// 객체 프로퍼티가 없는 형태
+		var obj1 = {};
+		document.write(typeof(obj1) + br);
+		
+		// 객체 프로퍼티가 있는 형태
+		var emp1 = {
+				id : 100,
+				name : "이사원",
+				salary : 56700.99,
+				print:function() {
+					document.write("<h3>" + this.id + " : " + this.name + " : " + this.salary + "</h3>");
+				}
+		}
+		
+		emp1.print();
+		emp1.calcSalary();
+		
+		document.write(('id' in emp1) + br);
+		document.write(('dept' in emp1) + br);
+		
+		emp1.dept = "교육부";	// 추가
+		document.write(('dept' in emp1) + br);
+		
+		delete emp1.salary;		// 삭제
+		document.write(('salary' in emp1) + br);
+		
+		emp1['title'] = "사원";		// 추가
+		document.write(('title' in emp1) + br);
+		
+		// 모든 변수 출력
+		document.write("===================" + br);
+		for(a in emp1) {
+			document.write(a + " : " + emp1[a] + br);
+		}
+		document.write("===================" + br);
+	</script>
+	
+</body>
+</html>
