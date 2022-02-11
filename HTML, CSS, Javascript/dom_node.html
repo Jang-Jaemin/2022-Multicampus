@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+	<script>
+		window.onload = function() {
+			var body = document.getElementById("b");	// DOM 객체
+			// body 자식태그 출력
+			/* body_childs = body.childNodes;	// 배열
+			for(var i = 0; i < body_childs.length; i++) {
+				if(body_childs[i].noteType == 1) {
+					document.write(body_child[i] + "<br>");					
+				}
+			} */
+			// test 1
+			/* var one = document.getElementById("one");
+			document.getElementById("output").innerHTML = one.innerHTMl;
+			
+			// test 2
+			var a_list = document.getElementsByTagName("a");
+			for(var i = 0; i < a_list.length; i ++) {
+				document.getElementById("output").innerHTML = one.innerHTMl;
+				a_list[i].innerHTML + "<br>";
+			}
+			
+			// test 3 - 클래스 명
+			var choice_list = document.querySelector("choice");
+			for(var i = 0; i < choice_list.length; i ++) {
+				document.getElementById("output").innerHTML += choice_list[i].innerHTML + "<br>";
+			}
+			
+			// test 4 - css selector 문법. 리턴 1개, 나머지 무시
+			var h1_a = document.querySelector("h1 a");
+				document.getElementById("output").innerHTML = h1_a.innerHTML + "<br>";
+			} */
+			
+			// test 5 - css selector 문법. 리턴 여러개
+			var h1_a_list = document.querySelector("h1 a");
+			for(var i = 0; i < hi_a_list.length; i ++) {
+				/* h1_a_list[i].href = "same" + i + ".html"; */
+				h1_a_list[i].setAttribute("href", "same" + i + ".html");
+				
+				// id, class, style, title
+				h1_a_list[i].style.bacgroundColor="pink";
+				document.getElementById("output").innerHTML += /* hi_a_list[i].innerHTML + "<br>"; */
+				h1_a_list[i].getAttribute("href");
+			}
+		}
+	</script>
+</head>
+<body id="b">
+
+	<a id="one" href="b.html">링크문자열1</a>
+	<a class="choice"  href="c.html">링크문자열2</a>
+	<a href="d.html">링크문자열3</a>
+	<h1><a class="choice" href="e.html">링크문자열4</a></h1>
+	<h1><a class="choice" href="f.html">링크문자열5</a></h1>		
+	<div id="output"></div>
+	
+</body>
+</html>

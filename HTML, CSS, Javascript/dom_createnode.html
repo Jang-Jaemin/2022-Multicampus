@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+	<div id="create"></div>
+	
+	<script>
+		window.onload = function() {
+			// 1. img 태그 생성
+			var imgtag = document.createElement("img");
+			// 2. img src 속성 - 이미지파일 설정
+			imgtag.setAttribute("src", "http://localhost:8080/html/images/html5.jpg");
+			// 3. 필요하면 기타 속성 설정
+			imgtag.setAttribute("alt", "html5 로고이미지");
+			imgtag.setAttribute("id", "newimg");
+			// 4. div 내부에 보이게 설정
+			document.getElementById("create").appendChild(imgtag.cloneNode());	// 복사본 삽입
+			
+			// a 추가 - href="http://localhost:8080/html/images/html5.jpg"
+			// a 링크문자열 내용 - 이미지클릭
+			// 이미지태그 다음에 삽입
+			var a = document.createElement("a");
+			a.setAttribute("href", "http://localhost:8080/html/images/html5.jpg");
+			a.textContent = "이미지클릭";
+			document.getElementById("create").appendChild(a);
+			
+			// imgtag를 1번 더 append
+			document.getElementById("create").appendChild(imgtag);
+			document.getElementById("create").removeChild(imgtag);
+		}
+	</script>
+	
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+	<!-- html태그 공통속성 - title, id, class, style, onclick -->
+	<input type="button" value="클릭" id="btn">
+	<div id="result"></div>
+	<script>
+		/* document.getElementById('btn').onclick = display;
+		document.getElementById('btn').onclick = display2; */
+		addEventListener('load', function() {
+			document.getElementById('btn').addEventListener('click', display, false);
+			document.getElementById('btn').addEventListener('click', display2, false);
+		}, false);
+	
+		function display() {
+			document.getElementById('result').innerHTML += '버튼이 클릭되었습니다.';
+		}
+		
+		function display2() {
+			document.getElementById('result').innerHTML += '버튼이 클릭되었습니다. 2';
+		}
+		
+	</script>
+	
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+	<div id="image"></div>
+	
+	<script>
+		var path = "http://127.0.0.1:8080/html/images/";
+		var imglist = ['americano.jpg', 'blackcoffee.gif', 'cafelatte.jpg', 'cappuccino.jpg', 'drinks.jpg'];
+		
+		// 5개 이미지 div 추가
+		var div = document.getElementById("image");
+		for(i in imglist) {
+			var imgtag = document.createElement("img");
+			imgtag.setAttribute("src", path + imglist[i]);
+			imgtag.setAttribute("width", "200");
+			imgtag.setAttribute("height", "200");
+			imgtag.setAttribute("style", "border:2px solid purple");
+			div.appendChild(imgtag);
+		}
+		
+		// 1초마다 한번씩 첫번째 이미지를 마지막 위치로 이동
+		function a() {
+			div.appendChild(div.firstChild);
+		}
+		setInterval(a, 1000);
+		
+	</script>
+	
+</body>
+</html>

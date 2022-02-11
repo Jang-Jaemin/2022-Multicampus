@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+	<!--  4개의 라디오버튼 중 1개를 선택하면 선택 색상 이름으로 사각형을 그린다.
+		선 / 바탕색 - 캔버스 내부 왼쪽 오른쪽 배치 -->
+</head>
+<body>
+
+	<input type="radio" id="one" value="red" name="col">빨강색
+	<input type="radio" id="two" value="green" name="col">초록색
+	<input type="radio" id="three" value="blue" name="col">파랑색
+	<input type="radio" id="four" value="purple" name="col">보라색
+	
+	<canvas id="mycanvas" width="640" height="400" style="border:2px solid pink"></canvas>
+	
+	<div id="state"></div>
+	
+	<script>
+		window.onload = function() {
+			
+			var radio_list = document.getElementsByName("col");
+			
+			for(r in radio_list) {	// 반복하면서 클릭하면 함수 등록
+				radio_list[r].onclick = function() {
+					var mycolor = this.value;
+					var mycanvas = document.getElementById("mycanvas");
+					var ctx = mycanvas.getContext("2d");
+					
+					ctx.strokeStyle = mycolor;
+					ctx.fillStyle = mycolor;
+					ctx.strokeRect(50, 60, 200, 100);
+					ctx.fillRect(300, 60, 200, 100);
+				}
+			}
+		}
+	</script>
+	
+</body>
+
+</html>

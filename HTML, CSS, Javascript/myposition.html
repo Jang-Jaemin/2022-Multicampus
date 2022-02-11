@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+	<input type="button" value="위치추적시작" id="start">
+	<input type="button" value="위치추적종료" id="stop">
+	<div id="position"></div>
+	
+	<script>
+		window.onload = function() {
+			document.getElementById("start").onclick = function() {
+				// geolocation 위치 파악 메소드 호출 - 결과 - 위도/경도/고도 출력 - map
+				var watchid = navigator.geolocation.watchPosition(success, fail);
+				document.getElementById("position").innerHTML = " 위치추적을 시작합니다.";
+			}
+			document.getElementById("stop").onclick = function() {
+				// geolocation 위치 파악 종료 메소드 호출 -
+				navigator.geolocation.clearWatch(watchid);
+				document.getElementById("position").innerHTML = " 위치추적을 중단합니다.";
+			}
+		}
+		
+		function success(pos) {
+			var lat = pos.coords.latitude;	// 위도
+			var lon = pos.coords.longitude;	// 경도
+			document.getElementById("position").innerHTML = "위도 : " + lat + ", 경도 : " + lon;
+			// 새창열기
+			open("https://maps.google.com/?q=" + lat + "," + lon, "위치정보","width=600, height=400, resizable=yes");
+		}
+		
+		function fail(err) {
+			document.getElementById("position").innerHTML = "오류발생 : " + err.code + "번, " + err.message;
+		}
+	</script>
+	
+	<div id="result"></div>
+
+</body>
+</html>

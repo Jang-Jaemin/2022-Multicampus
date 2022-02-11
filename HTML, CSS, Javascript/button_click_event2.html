@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+	<script>
+		/* window. */onload = function() {
+				var cnt = 1;
+			document.getElementById('btn').onclick = function(e) {
+				// output 태그 읽어서 내부 결과 출력 갱신
+				document.getElementById('output').innerHTML = "버튼이" + cnt++ + "번 클릭되었습니다.<br>";
+			}
+			
+			document.getElementById('btn2').onclick = function() {
+				document.getElementById('output').innerHTML = "클릭해도 카운팅되지 않습니다.<br>";
+				// 클릭 이벤트 함수 해제
+				document.getElementById('btn').onclick = null;			
+			}
+		}
+		
+	</script>
+</head>
+<body>
+
+	<!-- html태그 공통속성 - title, id, class, style, onclick -->
+	<input type="button" value="클릭" id="btn">
+	<input type="button" value="클릭 이벤트 제거" id="btn2">
+	<div id="output"></div>
+	
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+	<h1>브라우저 정보 객체</h1>
+	
+	<script>
+		document.write("<h3>" + navigator.appCodeName + "</h3>");
+		document.write("<h3>" + navigator.userAgent + "</h3>");
+		document.write("<h3>" + navigator.platform + "</h3>");
+		if(navigator.userAgent.indexOf("Chrome") >= 0) {/*크롬*/}
+		else if(navigator.userAgent.indexOf("Trident") >= 0) {/*Safari*/}
+	</script>
+	
+	<h1>히스토리 객체</h1>
+	<a href="javascript:history.go(-1)">뒤로가기</a><br>
+	<a href="javascript:history.back()">뒤로가기</a><br>
+	<a href="javascript:history.go(1)">앞으로가기</a><br>
+	<a href="javascript:history.forward()">앞으로가기</a><br>
+	
+	<h1>url 정보 객체</h1>
+	<form action="a.jsp">
+		<input type="text" id="name" name="name">
+		<input type="button" value="전송" id="send">
+	</form>
+	
+	<script>
+		window.onload = function() {
+			document.getElementById("send").onclick = function() {
+				location.href = "a.jsp";				
+			}
+		}
+	</script>
+	
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	
+	<script>
+		var userlist = ["test", "mysql", "java", "spring", "jquery"];
+		
+		window.onload = function() {
+			// 로그인버튼 클릭할 때
+			// 입력받은 아이디는 userlist에 포함되어야 하고
+			// userpw, userpw2 암호 2개는 일치해야 한다. -> xxxx - xxxx 정상 로그인 되었습니다. 출력.
+			// 아이디 조건 만족, 암호 조건 불만 -> 아이디(님) 암호가 일치하지 않습니다. 출력.
+			var button = document.getElementById("loginbtn");
+			button.onclick = function() {
+				var text = document.getElementById("userid");
+				var password = document.getElementById("userpw");
+				var password2 = document.getElementById("userpw2");
+				var div = document.getElementById("result");
+				
+				for(a in userlist) {
+					if(userlist[a] == text.value) {
+						if(password.value == password2.value) {
+							div.innerHTML = text.value + "님의 암호는 " + password.value + " 입니다. 로그인 되었습니다.";
+						} else {
+							div.innerHTML = text.value + "님의 암호가 맞지 않습니다. 다시 입력하세요.";
+						} break;
+					} else {
+						div.innerHTML = "회원가입이 필요합니다.";						
+					}
+				}
+			}
+		}
+	</script>
+
+	<form action="login.jsp">
+		아&nbsp;이&nbsp;디 <input type="text" value="기본값" id="userid" name="userid"><br>
+		암&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;호 <input type="password" id="userpw" name="userpw"><br>
+		암호확인 <input type="password" id="userpw2" name="userpw2"><br>
+		<input type="button" value="로그인" id="loginbtn">
+	</form>
+	
+	<div id="result"></div>
+	
+</body>
+</html>
