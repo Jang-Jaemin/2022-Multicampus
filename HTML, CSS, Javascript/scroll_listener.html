@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+	
+	<style>
+		.select {
+			display: inline-block;
+			margin: 10px;
+			padding: 10px;
+			background-color: purple;
+			cursor: grab;
+		}
+		
+		.box{
+			display: inline-block;
+			padding: 100px;
+			margin: 30px;
+			margin-left: 0;
+			background-color: yellow;
+		}
+	</style>
+	
+</head>
+<body>
+
+	<span class="select">#sec1</span>
+	<span class="select">#sec2</span>
+	<span class="select">#sec3</span>
+	<br>
+	<div class="box" id="sec1">#sec1</div>
+	<br>
+	<div class="box" id="sec2">#sec2</div>
+	<br>
+	<div class="box" id="sec3">#sec3</div>
+	
+	<script>
+		var select = document.getElementsByClassName("select");
+		
+		for(var i = 0; i < select.length; i++) {
+			select[i].addEventListener('click', autoscroll, false);
+			select[i].onclick = function()
+		}
+		
+		function autoscroll() {
+			function() {
+				var text = this.innerHTML;
+				var box = document.getElementsByClassName("box");
+				for(j in box) {
+					if(box[j].innerHTML == text) {
+						var rect = box[j].getBoundingClientRect();
+						//alert(rect.top + " : " + rect.height);
+						scrollTo(0, rect.top + window.pageYOffset);
+						//scrollTo(0, 0);	// 페이지 상단 이동
+						//scrollTo(0, document.documentElement.scrollHeight);	// 페이지 하단 이동
+					}
+				}
+			}
+		}
+	</script>
+	
+</body>
+</html>

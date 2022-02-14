@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+	<script>
+		window.addEventListener('load', start, false);
+		function start() {
+			var a = document.querySelector("#a");
+			a.addEventListener('click', c, false);
+			a.addEventListener('click', d, false);
+			a.onclick = b;
+			//a.onclick = d;
+			
+			function b() {a.innerHTML += "B가 정하는 제목";}
+			function c() {a.innerHTML += "C가 정하는 제목";}
+			function d() {a.innerHTML += "D가 정하는 제목";}
+			
+			var i = document.querySelector("#i");
+			i.addEventListener('click', e, false);
+			
+			var me = document.querySelector("#me");
+			me.addEventListener('click', f, false);
+		}
+		function b() {a.innerHTML += "B가 정하는 제목";}
+		function c() {a.innerHTML += "C가 정하는 제목";}
+		function d() {a.innerHTML += "D가 정하는 제목";}
+		function e() {a.removeEventListener('click', c, false);}
+		function f(event) {
+			// 이벤트 정보 객체 - Event 내장 객체 전달 받음
+			a.innerHTML = event.target.id + " 아이디를 가진 " + event.target.tagName + " 태그에서 " + event.type + " 이벤트 발생<br>"
+			+ "X좌표 : " + event.offsetX + ", Y좌표 : " + event.offsetY;
+		}
+	</script>
+	
+</head>
+<body>
+
+	<h1 id="a">처음 제목</h1>
+	<input id="i" type="button" value="이벤트제거">
+	
+	<div id="me">클릭하세요</div>
+</body>
+</html>

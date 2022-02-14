@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+	<form id="f" action="loginserver.jsp">
+		아이디<input type=text id="id" ><br>
+		암호1<input type=password id="pw1" ><br>
+		암호2<input type=password id="pw2" ><br>
+		<input type=submit  value="로그인" id="btn">
+	</form>
+	
+	<script>
+		var f = document.getElementById("f");
+		f.onsubmit = function(e) {
+			alert("실행중");
+			e.preventDefault();
+		}
+	</script>
+	
+</body>
+</html>

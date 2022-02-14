@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+	<style>
+		div {
+			width: 500px;
+			padding: 20px;
+			background-color: blue;
+		}
+		
+		a {
+			width: 100px;
+			background-color: green;
+			font-size: 30px;
+		}
+	</style>
+</head>
+<body>
+
+	<div id="outer">
+		<a id="inner" href="test.html">이동</a>
+	</div>
+	
+	<script>
+		var inner = document.getElementById("inner");
+		var outer = document.getElementById("outer");
+		
+		inner.onclick = function(ev) {
+			alert("1. 자식태그에서 이벤트 발생");
+			ev.preventDefault();	// a태그 기본동작 무효화
+			ev.stopPropagation();	// 부모 이벤트 전파 방지
+			
+		}
+		outer.onclick = function() {alert("1. 부모태그에서 이벤트 발생");}
+	</script>
+	
+</body>
+</html>
