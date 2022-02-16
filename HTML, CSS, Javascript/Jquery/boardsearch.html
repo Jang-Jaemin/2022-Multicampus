@@ -3,17 +3,42 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+	
+	<script src="js/jquery-3.6.0.min.js"></script>
+	
+	<script>
+		$(document).ready(function() {
+			$('div').css('border', '2px solid red');
+			$('input:checkbox:first').on('click', function() {
+				// checked 상태가 아니면 변경 / checked 상태이면 없애기
+				if($(this).attr('checked') == undefined) {	// 아직 checked 상태가 아니면
+					$(this).attr('checked', 'checked')
+				} else {	// checked 상태라면
+					$(this).removeAttr('checked');	// checked 상태를 없애기
+				}
+				// 나머지 제목 내용 작성자 적용
+				if($(this).attr('checked') == 'checked') {
+					$('input:checkbox').attr('checked', 'checked');					
+				} else {
+					$('input:checkbox').removeAttr('checked');
+				}
+			});
+		});
+	</script>
+	
 </head>
 <body>
-<h1> 검색 대상과 검색어를 입력하세요.</h1>
-<form action="" id="searchform" >
-	<input type=checkbox value="모두" /> 모두
-	<input type=checkbox value="제목" /> 제목
-	<input type=checkbox value="내용" /> 내용
-	<input type=checkbox value="작성자" /> 작성자
-	<input type=text value="검색어를 입력하세요" />		 
-	<input type=submit value="검색" />
 
-</form>
+	<h1> 검색 대상과 검색어를 입력하세요.</h1>
+	<form action="" id="searchform" >
+		<input type=checkbox value="모두" /> 모두
+		<input type=checkbox value="제목" /> 제목
+		<input type=checkbox value="내용" /> 내용
+		<input type=checkbox value="작성자" /> 작성자
+		<input type=text value="검색어를 입력하세요" />		 
+		<input type=submit value="검색" />
+	</form>
+	<div></div>
+	
 </body>
 </html>

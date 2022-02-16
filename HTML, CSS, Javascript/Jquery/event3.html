@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+	<script src="js/jquery-3.6.0.min.js"></script>
+	<script>
+		$(document).ready(function() {
+			$("form").on("submit", function(e) {
+				//alert(e.target.tagName + " : " + e.type);	// 자바스크립트 객체 변수들 출력
+				userlist = ['사용자1', '자바1', 'spring1'];
+				titlelist = ['db', 'react', 'spring'];
+				
+				var find1 = false, find2 = false;
+				// 사용자명은 userlist 값 중 하나여야 한다. 그렇지 않으면 a.jsp 이동 X
+				for(var i = 0; i < userlist.length; i++) {
+					if($("input:text:first").val() == userlist[i]) {
+						find1 = true;
+						break;
+					}
+				}
+				for(var i = 0; i < titlelist.length; i++) {
+					if($("input:text:eq(1)").val() == titlelist[i]) {
+						find2 = true;
+						break;
+					}
+				}
+				// find1
+				if(find1 == false || find2 == false) {
+					// 사용자명 focus()
+					alert("사용자명 : " + $("input:text:first").val() + " : " +
+							$("input:text:first").get(0).value + " 불가능합니다.");
+					$("input:text:first").val("");
+					$("input:text:first").focus();
+					e.preventDefault();					
+				}
+			});
+		});
+	</script>
+
+</head>
+<body>
+
+	<form action="a.jsp">
+		사용자명 <input type="text" name="n"><br>
+		과정명 <input type="text" name="t"><br>
+		<input type="submit" value="등록">
+	</form>
+
+</body>
+</html>

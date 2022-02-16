@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+	<script src="js/jquery-3.6.0.min.js"></script>
+	<script>
+		$(document).ready(function() {
+			var cnt = 0;
+			$("#btnclick").on("click", function() {
+				$("div").html(++cnt + "번 클릭했습니다.");
+				$("input:last").after("<input type='button' value='새로 생성한 버튼 " + cnt + "'id='btnadd'>");
+			});
+			$("#btnstop").on("click", function() {
+				$("#btnclick").off("click")
+			});
+			$("#btnnotice").on("click", function() {
+				$("div").html("한번만 보여드립니다.");
+			});
+			
+			//
+			/* $("#btnadd").on("click", function() {
+				alert($(this).val() + " 클릭했습니다.");
+			}) */
+			$("body").on("click", "#btnadd", function() {
+				alert($(this).val() + " 클릭했습니다.");
+			})
+			
+			// 키이벤트
+			$("#keyin").on("keyup", function(e) {
+				if(e.keyCode >= 48 && e.keyCode <= 57) {
+					//$("div").text($(this).val());
+					$("div").text(e.key);
+				}
+			})
+		});
+	</script>
+
+</head>
+<body>
+
+	<input type=button value="클릭" id="btnclick">
+	<input type=button value="중단" id="btnstop">
+	<input type=button value="공지사항" id="btnnotice">
+	<div></div>
+
+</body>
+</html>

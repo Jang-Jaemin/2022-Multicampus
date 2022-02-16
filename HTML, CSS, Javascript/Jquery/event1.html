@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <script src="js/jquery-3.6.0.min.js"></script>
+    <script>
+		$(document).ready(function() {
+			$('h1').click(function() {
+                $('div').html($('h1').text());
+			});
+		});
+		
+		$('h1').on('click', function(){
+			$('h1').css('background-color', 'purple');
+		});
+
+		$('input:button').on('click', function() {
+		    $('h1').off('click');
+		});
+
+    </script>
+
+</head>
+<body>
+
+    <h1>클릭하세요</h1>
+    <div></div>
+    <!-- <script>
+        $('h1').click(function() {
+            $('div').html($('h1').text());
+        });
+    </script> -->
+
+</body>
+</html>

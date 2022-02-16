@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+	<script src="js/jquery-3.6.0.min.js"></script>
+	<script>
+		$(document).ready(function() {
+			$('#box').css({
+				height: '100px',
+				width: '100px',
+				backgroundColor: 'orange'
+			});
+			
+			// 1개 태그에 여러 이벤트처리 1
+			//$('#box').on('click', function() {$(this).css('background-color', 'red')});
+			//$('#box').on('mouseenter', function() {$(this).css('background-color', 'green')});
+			//$('#box').on('mouseleave', function() {$(this).css('background-color', 'orange')});
+			
+			// 1개 태그에 여러 이벤트처리 2
+			//$('#box')
+			//.on('click', function() {$(this).css('background-color', 'red')})
+			//.on('mouseenter', function() {$(this).css('background-color', 'green')})
+			//.on('mouseleave', function() {$(this).css('background-color', 'orange')});
+			
+			// 1개 태그에 여러 이벤트처리 3
+			$('#box').on({
+				click : function() {$(this).css('background-color', 'red')},
+				mouseenter : function() {$(this).css('background-color', 'green')},
+				mouseleave : function() {$(this).css('background-color', 'orange')}
+			});
+		});
+	</script>
+
+</head>
+<body>
+
+	<div id="box"></div>	
+
+</body>
+</html>
