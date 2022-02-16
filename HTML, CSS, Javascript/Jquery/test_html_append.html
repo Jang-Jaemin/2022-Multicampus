@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+	<script src="js/jquery-3.6.0.min.js"></script>
+	
+	<script>
+		$(document).ready(function() {
+			alert($("#contents").html());
+			//$("#contents").html("<input type='password' value='123'");	// setter 역할
+			$("#contents").append("<input type='password' value='123'");
+			$("#contents").text("<input type='password' value='123'");
+			$("#contents").append("<input type='password' value='123'");
+		});	
+	</script>
+</head>
+<body>
+
+	<div id="contents">
+		<input type="text" value="jquery"><br>
+	</div>
+	
+</body>
+</html>

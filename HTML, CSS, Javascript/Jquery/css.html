@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+	<script src="js/jquery-3.6.0.min.js"></script>
+	
+	<script>
+		$(document).ready(function() {
+			//$('div').css('color', 'blue');
+			$('div').css('color', function(index){
+				if(index == 0) {return 'red';}
+				else if(index == 1) {return 'green';}
+				else {return 'blue';}
+			});
+		});
+	</script>
+	
+</head>
+<body>
+
+	<div>1번째</div>
+	<div>2번째</div>
+	<div>3번째</div>
+	
+</body>
+</html>

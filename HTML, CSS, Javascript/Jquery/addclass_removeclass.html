@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+	
+	<style>
+		.myclass {
+			color: red;
+			background-color: green;
+		}
+		
+		.box {
+			width: 300px;
+			height: 200px;
+		}
+	</style>
+
+	<script src="js/jquery-3.6.0.min.js"></script>
+	
+	<script>
+		$(document).ready(function() {
+			$('h1, h2').addClass('myclass');
+			$('h3').removeClass('myclass');
+		});
+	</script>
+	
+</head>
+<body>
+
+	<h1>클래스 속성을 제어합니다.</h1>
+	<h2>addclass 함수를 공부합니다.</h2>
+	<h3 class="myclass">removeclass 함수도 공부합니다.</h3>
+	
+</body>
+</html>

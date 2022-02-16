@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+	<!-- online -->
+	<script src="js/jquery-3.6.0.min.js"></script>
+	
+</head>
+<body>
+	
+	<script>
+		$(document).ready(function() {
+			// h1 태그 글씨 색상 분홍색 변경
+			//$("h1").css("color", "pink");
+			/* $("#second").css("color", "pink");	// id second 태그 글씨색상 핑크 변경
+			$(".red").css("color", "red");	// class red 태그 글씨색상 빨강 변경
+			$("h1 a").css("text-decoration", "none");	// h1 태그 포함 a 태그 밑줄 없애기
+			$("h1, td").css("background-color", "yellow");	// h1, td 태그들의 배경색 노랑
+			$("h1.red").css("background-color", "red");	// class red인 h1 태그
+			$('input[type=text]').css("color", "aqua");	// input type=text 태그 글씨색 하늘색 변경
+			$('input[type^=te]').css("color", "blue");	// input type te 시작 태그
+			$('input[type$=l]').css("color", "green");	// input type te l 종료 태그
+			$('input[type*=e]').css("color", "red");	// input type e 포함 태그
+			$('input:button').css("color", "purple");	// input button */
+			
+			// 순서위치
+			/* $('th').css('background-color', 'red'); */
+			//$('th:first').css('background-color', 'red');
+			//$('th:last').css('background-color', 'blue');
+			
+			//$('tr:even td').css('color', 'red');	// 짝수
+			//$('tr:odd td').css('color', 'blue');	// 홀수
+			//$('tr:nth-child(3n) td').css('color', 'blue');
+			//$('tr:nth-eq(3) td').css('color', 'blue');
+			//$('tr:nth-gt(3) td').css('color', 'blue');
+			//$('tr:nth-lt(3) td').css('color', 'blue');
+			
+			$('th:first-child').css('background-color', 'red');
+			alert($('th:first-child').css('background-color'));
+		});
+	</script>
+	
+	<h1 class="red"> 제목1 </h1>
+	<h1 id="second"> 제목2</h1>
+	<h1> <a href="a.html"> 링크1 </a></h1>
+	<a class="red" href="b.html"> 링크2 </a><br>
+	<input type=text value="기본문자열"><br>
+	<input type=password value="기본암호"><br>
+	<input type=tel value="기본"><br>
+	<input type=url value="http://"><br>
+	<input type=email value="a@b.com"><br>
+	<input type=button value="버튼"><br>
+	<button>버튼2</button>
+	<table>
+	<tr><th>번호</th><th>제목</th><th>내용</th><th>작성자</th></tr>
+	<tr><td>1</td><td>제목1</td><td>내용1</td><td>작성자1</td></tr>
+	<tr><td>2</td><td>제목1</td><td>내용1</td><td>작성자1</td></tr>
+	<tr><td>3</td><td>제목1</td><td>내용1</td><td>작성자1</td></tr>
+	<tr><td>4</td><td>제목1</td><td>내용1</td><td>작성자1</td></tr>
+	<tr><td>5</td><td>제목1</td><td>내용1</td><td>작성자1</td></tr>
+	<tr><td>6</td><td>제목1</td><td>내용1</td><td>작성자1</td></tr>
+	<tr><td>7</td><td>제목1</td><td>내용1</td><td>작성자1</td></tr>
+	</table>
+	
+	<table>
+	<tr><th>번호</th><th>제목</th><th>내용</th><th>작성자</th></tr>
+	<tr><td>1</td><td>제목1</td><td>내용1</td><td>작성자1</td></tr>
+	<tr><td>2</td><td>제목1</td><td>내용1</td><td>작성자1</td></tr>
+	<tr><td>3</td><td>제목1</td><td>내용1</td><td>작성자1</td></tr>
+	<tr><td>4</td><td>제목1</td><td>내용1</td><td>작성자1</td></tr>
+	<tr><td>5</td><td>제목1</td><td>내용1</td><td>작성자1</td></tr>
+	<tr><td>6</td><td>제목1</td><td>내용1</td><td>작성자1</td></tr>
+	<tr><td>7</td><td>제목1</td><td>내용1</td><td>작성자1</td></tr>
+	</table>
+
+</body>
+</html>

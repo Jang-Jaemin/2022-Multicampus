@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+	<script src="js/jquery-3.6.0.min.js"></script>
+	
+	<script>
+		$(document).ready(function() {
+			//$('#id').val('jquery 기본값');
+			//alert($('#id').val());
+			//alert($('#gender1').val() + ", " + $('#gender2').val());
+			// 현재 선택된 성별값
+			//alert($('input:radio:checked').val());
+			//$('input:radio').each(function() {
+			//	alert($(this).val());
+			//});
+			
+			$('input:radio:first').prop('checked', true);
+			$('input:radio:first').prop('checked', false);
+			$('input:radio').each(function(i) {
+				alert(i + "번째 radio : " + $(this).prop('checked'));
+			});
+		});
+	</script>
+</head>
+<body>
+	아이디 <input type="text" id="id"><br>
+	암호 <input type="password" id="pw"><br>
+	성별 <input type="radio" id="gender1" value="male" name="gender"> 남자
+		<input type="radio" id="gender2" value="femail" name="gender"> 여자
+	<textarea id="memo" cols="50" rows="5">
+		여기에 메모하세요.
+	</textarea>
+	<br>
+	<select id=ban"">
+		<option>1반</option>
+		<option>2반</option>
+		<option>3반</option>
+		<option>4반</option>
+		<option>5반</option>
+	</select>
+	
+</body>
+</html>

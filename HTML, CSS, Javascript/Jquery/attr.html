@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+	<script src="js/jquery-3.6.0.min.js"></script>
+	
+	<script>
+		$(document).ready(function() {
+			$('img:first').attr('src', '/html/images/drinks.jpg');
+			$('img').attr('width', '100px');
+			$('img').attr('height', '100px');
+			$('img').attr('alt', '음료수사진');
+			
+			$('img:last').attr({
+				src: '/html/images/americano.jpg',
+				width: '100',
+				height: '100',
+				alt: '커피사진'
+			});
+			
+			// 방법 1
+			/* for(var i = 0; i < $('img').length; i++) {
+				alert(i + "번째 이미지 : " + $('img:eq(' + i + ')').attr('src'));
+			} */
+			
+			// img src 속성 없애기
+			//$('img').removeAttr('src');
+			
+			// 방법 2, 3, 4
+			$('img').each(function(i) {
+				// alert(i + "번째 이미지 : " + $('img:eq(' + i + ')').attr('src'));	// 방법 2
+				// alert(i + "번째 이미지 : " + $(this).attr('src'));	// 방법 3
+				alert(i + "번째 이미지 : " + this.src);	// 방법 2
+			});
+			
+		});
+	</script>
+</head>
+<body>
+
+	<img>
+	
+</body>
+</html>
