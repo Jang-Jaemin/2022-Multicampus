@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+	<script>
+		class Person {
+			constructor(name, age, gender) {
+				this.name = name;
+				this.age = age;
+				this.gender = gender;
+				Person.personcount = Person.personcount + 1;
+			}
+			
+			print() {
+				document.write("이름 : " + this.name + ", 나이 : " + this.age + ", 성별 : " + this.gender + "<br>");
+			}
+			
+			count() {
+				return Person.personcount;
+			}
+		}
+		
+		class Circle {
+			constructor(center, radius) {
+				this.center = center;
+				this.radius = radius;
+			}
+			
+			area() {
+				return this.radius * this.radius * Math.PI;
+			}
+			
+			toString() {
+				return "원은 중심점 x : " + this.center.x + ", y : " + this.center.y + " , 반지름 : " + this.radius;
+			}
+		}
+		
+		class Ball extends Circle {
+			move(dx, dy) {
+				this.center.x = dx;
+				this.center.y = dy;
+			}
+			
+			toString() {
+				var imsi = super.toString();
+				return imsi.replace("원", "볼");
+			}
+		}
+			
+		var p1 = new Person("이철수", 30, "남");
+		p1.print();
+		document.write("객체의 수 : " + Person.count() + "<br>");
+		var p2 = new Person("김영희", 20, "여");
+		p2.print();
+		document.write("객체의 수 : " + Person.count() + "<br>");
+		
+		var c = new Circle({x : 100, y : 200}, 10);
+		document.write("원의 정보 : " + c.toString() + "<br>");
+		document.write("원의 면적 : " + c.area() + "<br>");
+		
+		var b = new Ball({x : 100, y : 200}, 10);
+		b.move(10, 20);
+		document.wirte("볼의 정보 : " + b.toString() + "<br>");
+	</script>
+	
+</body>
+</html>

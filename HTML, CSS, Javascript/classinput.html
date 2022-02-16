@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+	<!-- html form 태그 이용 입력 -->
+	<form>
+	게시물제목 <input type="text" id="title"><br>
+	게시물내용 <input type="text" id="contents"><br>
+	게시물작성자 <input type="text" id="wrtier"><br>
+	<input type="button" value="객체로 생성" id="boardbtn"><br>
+	<input type="button" value="게시물 조회" id="boardviewbtn"><br>
+	</form>
+	
+	<div id="output">게시물 객체 정보 출력</div>
+	
+	<script>
+		// 자바스크립트 class board 타입 객체 생성
+		class Board {
+			constructor(title, contents, writer){
+				this.title = title;
+				this.contents = contents;
+				this.writer = writer;
+				this.time = new Date();
+				this.viewcount = 0;
+			}
+			
+			toString() {
+				return this.title + " - " + this.contents + " - " + this.writer + " - " + this.time.toLocaleString() + " - " + thie.viewcount;
+			}
+			// viewcount 1 증가 메소드 추가
+			addViewcount() {this.viewcount++;}
+		}
+		
+		var title = document.getElementById("title");
+		var contents = document.getElementById("contents");
+		var writer = document.getElementById("writer");
+		var boardbtn = document.getElementById("boardbtn");
+		var output = document.getElementById("output");
+		var boardviewbtn = document.getElementById("boardviewbtn");
+		
+		boardbtn.onclick = function() {
+			board1 = new Board(title.value, contents.value, writer.value);
+			board1.addViewcount();
+			output.innerHTML += "<br>" + board1.toString();
+			output.style.border = "2px solid purple";
+		}
+		
+		boardviewbtn.onclick = function() {
+			//var board1 = new Board(title.value, contents.value, writer.value);
+			board1.addViewcount();
+			output.innerHTML = "<br>" + board1.toString();
+			output.style.border = "2px solid purple";
+		}
+	</script>
+	
+</body>
+</html>
