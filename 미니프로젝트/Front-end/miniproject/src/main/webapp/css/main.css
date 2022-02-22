@@ -1,0 +1,26 @@
+.section {
+  text-align: center;
+}
+
+.section_img img {
+  width: 100%;
+  margin: 5px 0 5px 0;
+  padding: 0;
+}
+
+.article_left,
+.article_right {
+  display: inline-block;
+  border: 1px solid gray;
+  padding: 30px;
+}
+
+.article_left {
+  width: 500px;
+  height: 100%;
+}
+
+.article_right {
+  width: 500px;
+  height: 100%;
+}

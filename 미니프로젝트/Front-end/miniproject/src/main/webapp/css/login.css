@@ -1,0 +1,33 @@
+.loginform {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  transform: translateY(50%);
+}
+
+.login_img img {
+  width: 40px;
+  margin: 10px 5px 10px 5px;
+}
+
+.id,
+.pw {
+  margin-bottom: 30px;
+}
+
+.id,
+.pw,
+.pw2 {
+  border: 1px solid black;
+  width: 300px;
+  height: 30px;
+}
+
+.login {
+  width: 100px;
+  height: 30px;
+  color: white;
+  border-color: rgb(230, 150, 80);
+  background-color: rgb(230, 150, 80);
+}

@@ -1,0 +1,27 @@
+.mypage {
+  display: block;
+  flex-direction: column;
+  justify-items: center;
+  text-align: center;
+  transform: translateY(20%);
+}
+
+.mypage span {
+  font-size: 60px;
+  margin-bottom: 50px;
+}
+
+.infobox {
+  border: 1px solid black;
+  width: 350px;
+  height: 30px;
+  margin-bottom: 10px;
+}
+
+.infochange {
+  width: 350px;
+  height: 30px;
+  color: white;
+  border-color: rgb(230, 150, 80);
+  background-color: rgb(230, 150, 80);
+}
