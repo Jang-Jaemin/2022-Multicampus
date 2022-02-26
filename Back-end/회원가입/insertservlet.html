@@ -1,0 +1,42 @@
+<!-- 회원가입 html -->
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+	<script src="js/jquery-3.6.0.min.js"></script>
+	<script>
+		$(document).ready(function() {
+
+		});
+	</script>
+
+</head>
+<body>
+
+	<h1>회원가입 폼</h1>
+	<form action="insert" method="post">
+		아이디 <input type="text" name="id"><br>
+		암호 <input type="password" name="password"><br>
+		이름 <input type="text" name="name"><br>
+		전화번호 <input type="text" name="phone"><br>
+		이메일 <input type="text" name="email"><br>
+		주소 <input type="text" name="address"><br><br>
+		취미 - 추가사항(선택)
+		<!-- <input type="checkbox" name="hobby" value="movie"> 영화
+		<input type="checkbox" name="hobby" value="music"> 음악
+		<input type="checkbox" name="hobby" value="eating show"> 먹방
+		<input type="checkbox" name="hobby" value="study"> 공부<br><br> -->
+		<select name="hobby" multiple>
+			<option value="movie"> 영화</option>
+			<option value="music"> 음악</option>
+			<option value="eating show"> 먹방</option>
+			<option value="study"> 공부</option>
+		</select><br><br>
+		<input type="submit" value="가입">
+	</form>
+
+</body>
+</html>
