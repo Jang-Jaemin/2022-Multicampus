@@ -63,4 +63,9 @@ public class MemberDTO {
 	public void setAddress(String address) {
 		this.address = address;
 	}
+
+	@Override
+	public String toString() {
+		return id + "님의 암호 : " + password + ", 이름 : " + name + ", 번호 : " + phone + ", 이메일 : " + email + ", 주소 : " + address + "<br>";
+	}
 }

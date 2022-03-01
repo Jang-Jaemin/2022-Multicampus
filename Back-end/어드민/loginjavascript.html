@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+	<script src="js/jquery-3.6.0.min.js"></script>
+	<script>
+		$(document).ready(function() {
+			$("form").on("submit", function() {
+				/* ev.preventDefault();	// 이동 X */
+				if($("input:text").val() == 'admin' || $("input:text").val() == 'administrator' || $("input:text").val() == 'administration') {
+					$("input:hidden").val("admin");
+				} else {
+					$("input:hidden").val("user");
+				}
+				this.action = "loginjs";	// form action = loginjs
+				/* this.method = "post";	// form method = post */
+			})
+		});
+	</script>
+
+</head>
+<body>
+
+	<form action="loginjs">
+		아이디 <input type="text" name="id"><br>
+		비밀번호 <input type="text" name="pw"><br>
+		<input type="hidden" name="role"> <!-- 브라우저 렌더링 X, 서버로 전달필요(값 사용자입력) -->
+		<!-- id에 admin administrator administration 입력화 -->
+		<input type="submit" value="로그인">
+	</form>
+	
+	<br><br>
+	
+	<a href="login?id=test&pw=1234">로그인 결과 보러가기</a>
+
+</body>
+</html>
