@@ -11,7 +11,7 @@ public class MemberMain {
 		ApplicationContext factory =  new ClassPathXmlApplicationContext("annotation/service/member.xml");
 		
 		MemberService service = (MemberService)factory.getBean("service");
-		service.regiterMember();
+		service.registerMember();
 		service.login();
 	}
 
