@@ -18,10 +18,10 @@ public class MemberServiceImpl2 implements MemberService{
 	public void login() {
 		boolean result = dao.selectMember();
 		if(result) {
-			System.out.println("���� �α��� �����");
+			System.out.println("정상 로그인 사용자");
 		}
 		else {
-			System.out.println("������ �α��� �����");
+			System.out.println("비정상 로그인 사용자");			
 		}
 		
 	}
