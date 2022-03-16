@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN" "http://mybatis.org/dtd/mybatis-3-config.dtd">
+
+<!-- mybatis db 연결정보 세팅 파일 -->
+<configuration>
+	<!-- 1. sql 실행 결과 XXDTO 매핑 -->
+	<typeAliases>
+		<typeAlias type="mybatis.MemberDTO" alias="memberdto" />
+	</typeAliases>
+	
+	<!-- 2. DataSource(연결, 여러개 생성 공유) -->
+	<environments default="development">
+		<environment id ="development">
+			<transactionManager type="JDBC" />
+			<dataSource type="POOLED">
+				<property name="driver" value="com.mysql.cj.jdbc.Driver" />
+				<property name="url" value="jdbc:mysql://127.0.0.1:3306/employeesdb" />
+				<property name="username" value="emp" />
+				<property name="password" value="emp" />
+			</dataSource>
+		</environment>
+	</environments>
+	
+	<!-- 3. sql 정의 파일명 설정 -->
+	<mappers>
+		<mapper resource="mybatis/sql-mapping.xml" />
+	</mappers>
+</configuration>
