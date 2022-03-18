@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="member">
+	<select id="memberlist" resultType="memberdto">
+		select * from member_table
+	</select>
+	
+	<insert id="insertmember" parameterType="memberdto">
+		insert into member_table values(#{id}, #{password}, #{name}, #{phone}, #{email}, #{address})
+	</insert>
+	
+	<update id="updatemember" parameterType="memberdto">
+		update member_table
+		set name=#{name}, address=#{address}
+		where id=#{id}
+	</update>
+	
+	<delete id="deletemember" parameterType="memberdto">
+		delete from member_table where id=#{i}
+	</delete>
+	
+	<select id="member" resultType="memberdto">
+		select * from member_table where id=#{i}
+	</select>
+	
+	<select id="paginglist" resultType="memberdto" parameterType="int[]">
+		select * from member_table limit
+		<foreach collection="array" item="num" separator=",">
+			#{num}
+		</foreach>
+	</select>
+	
+	<select id="addresssearch" resultType="String">
+		select id from member_table where address in
+		<foreach collection="array" item="add" open="(" close=")" separator=",">
+			#{add}
+		</foreach>
+	</select>
+</mapper>
